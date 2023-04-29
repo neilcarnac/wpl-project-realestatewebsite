@@ -6,7 +6,6 @@ if(isset($_COOKIE['user_id'])){
    $user_id = $_COOKIE['user_id'];
 }else{
    $user_id = '';
-   header('location:login.php');
 }
 
 include 'components/save_send.php';
@@ -16,12 +15,11 @@ include 'components/save_send.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link type="image/png" sizes="16x16" rel="icon" href="images/hoe.png">
-
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Saved</title>
+   <title>All Listings</title>
+   <link type="image/png" sizes="16x16" rel="icon" href="images/hoe.p">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -34,19 +32,17 @@ include 'components/save_send.php';
    
 <?php include 'components/user_header.php'; ?>
 
+<!-- listings section starts  -->
+
 <section class="listings">
 
-   <h1 class="heading">saved listings</h1>
+   <h1 class="heading">all listings</h1>
 
    <div class="box-container">
       <?php
          $total_images = 0;
-         $select_saved_property = $conn->prepare("SELECT * FROM `saved` WHERE user_id = ?");
-         $select_saved_property->execute([$user_id]);
-         if($select_saved_property->rowCount() > 0){
-         while($fetch_saved = $select_saved_property->fetch(PDO::FETCH_ASSOC)){
-         $select_properties = $conn->prepare("SELECT * FROM `property` WHERE id = ? ORDER BY date DESC");
-         $select_properties->execute([$fetch_saved['property_id']]);
+         $select_properties = $conn->prepare("SELECT * FROM `property` ORDER BY date DESC");
+         $select_properties->execute();
          if($select_properties->rowCount() > 0){
             while($fetch_property = $select_properties->fetch(PDO::FETCH_ASSOC)){
 
@@ -87,7 +83,7 @@ include 'components/save_send.php';
             <?php
                if($select_saved->rowCount() > 0){
             ?>
-            <button type="submit" name="save" class="save"><i class="fas fa-heart"></i><span>remove from saved</span></button>
+            <button type="submit" name="save" class="save"><i class="fas fa-heart"></i><span>saved</span></button>
             <?php
                }else{ 
             ?>
@@ -96,7 +92,8 @@ include 'components/save_send.php';
                }
             ?>
             <div class="thumb">
-               <p class="total-images"><i class="far fa-image"></i><span><?= $total_images; ?></span></p> 
+               <p class="total-images"><i class="far fa-image"></i><span><?= $total_images; ?></span></p>
+               
                <img src="uploaded_files/<?= $fetch_property['image_01']; ?>" alt="">
             </div>
             <div class="admin">
@@ -126,19 +123,23 @@ include 'components/save_send.php';
          </div>
       </form>
       <?php
-               }
-            }else{
-               echo '<p class="empty">no properties added yet! <a href="post_property.php" style="margin-top:1.5rem;" class="btn">add new</a></p>';
-            }
          }
       }else{
-         echo '<p class="empty">no properties saved yet! <a href="listings.php" style="margin-top:1.5rem;" class="btn">discover more</a></p>';
+         echo '<p class="empty">no properties added yet! <a href="post_property.php" style="margin-top:1.5rem;" class="btn">add new</a></p>';
       }
       ?>
       
    </div>
 
 </section>
+
+<!-- listings section ends -->
+
+
+
+
+
+
 
 
 

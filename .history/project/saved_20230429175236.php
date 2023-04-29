@@ -16,7 +16,7 @@ include 'components/save_send.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link type="image/png" sizes="16x16" rel="icon" href="images/hoe.png">
+<link type="image/png" sizes="16x16" rel="icon" href="images/hoe.gpngif">
 
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
