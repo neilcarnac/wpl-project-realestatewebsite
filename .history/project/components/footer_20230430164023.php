@@ -31,7 +31,7 @@
 
    </section>
 
-   <div class="credit">&copy; copyright @ <?= date('Y'); ?> by <span>ANS</span> | all rights reserved!</div>
+   <div class="credit">&copy; copyright @ <?= date('Y'); ?> by <span>mr. Carna</span> | all rights reserved!</div>
 
 </footer>
 

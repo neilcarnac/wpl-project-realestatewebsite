@@ -276,7 +276,7 @@ include 'components/save_send.php';
       <?php
          }
       }else{
-         echo '<a href="post_property.php" style="margin-top:1.5rem;" class="btn">add new</a>';
+         echo '<p class="empty">no properties added yet! <a href="post_property.php" style="margin-top:1.5rem;" class="btn">add new</a></p>';
       }
       ?>
       

@@ -36,9 +36,7 @@ include 'components/save_send.php';
 <!-- home section starts  -->
 <style>
    #loco{
-      background-color: #ffffff2b !important;
-      color: black;
-      border-radius: 5px;
+      
    }
 </style>
 <div class="home">
@@ -54,7 +52,7 @@ include 'components/save_send.php';
          <div class="flex">
             <div class="box">
                <p>property type <span>*</span></p>
-               <select id="loco" name="h_type" class="input" required>
+               <select name="h_type" class="input" required>
                   <option value="flat">flat</option>
                   <option value="house">house</option>
                   <option value="shop">shop</option>
@@ -62,7 +60,7 @@ include 'components/save_send.php';
             </div>
             <div class="box">
                <p>offer type <span>*</span></p>
-               <select id="loco" name="h_offer" class="input" required>
+               <select name="h_offer" class="input" required>
                   <option value="sale">sale</option>
                   <option value="resale">resale</option>
                   <option value="rent">rent</option>
@@ -70,7 +68,16 @@ include 'components/save_send.php';
             </div>
             <div class="box">
                <p>maximum budget <span>*</span></p>
-               <select id="loco" name="h_min" class="input" required>
+               <select name="h_min" class="input" required>
+                  <option value="5000">5k</option>
+                  <option value="10000">10k</option>
+                  <option value="15000">15k</option>
+                  <option value="20000">20k</option>
+                  <option value="30000">30k</option>
+                  <option value="40000">40k</option>
+                  <option value="40000">40k</option>
+                  <option value="50000">50k</option>
+                  <option value="100000">1 lac</option>
                   <option value="500000">5 lac</option>
                   <option value="1000000">10 lac</option>
                   <option value="2000000">20 lac</option>
@@ -98,7 +105,16 @@ include 'components/save_send.php';
             </div>
             <div class="box">
                <p>maximum budget <span>*</span></p>
-               <select id="loco" name="h_max" class="input" required>
+               <select name="h_max" class="input" required>
+                  <option value="5000">5k</option>
+                  <option value="10000">10k</option>
+                  <option value="15000">15k</option>
+                  <option value="20000">20k</option>
+                  <option value="30000">30k</option>
+                  <option value="40000">40k</option>
+                  <option value="40000">40k</option>
+                  <option value="50000">50k</option>
+                  <option value="100000">1 lac</option>
                   <option value="500000">5 lac</option>
                   <option value="1000000">10 lac</option>
                   <option value="2000000">20 lac</option>
@@ -276,7 +292,7 @@ include 'components/save_send.php';
       <?php
          }
       }else{
-         echo '<a href="post_property.php" style="margin-top:1.5rem;" class="btn">add new</a>';
+         echo '<p class="empty">no properties added yet! <a href="post_property.php" style="margin-top:1.5rem;" class="btn">add new</a></p>';
       }
       ?>
       

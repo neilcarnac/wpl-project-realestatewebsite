@@ -276,7 +276,7 @@ include 'components/save_send.php';
       <?php
          }
       }else{
-         echo '<a href="post_property.php" style="margin-top:1.5rem;" class="btn">add new</a>';
+         echo '<a href="post_property.php" style="margin-top:1.5rem, margin-left:" class="btn">add new</a>';
       }
       ?>
       
