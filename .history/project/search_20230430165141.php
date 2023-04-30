@@ -107,6 +107,7 @@ include 'components/save_send.php';
             <div class="box">
                <p>maximum budget</p>
                <select name="max" class="input" required>
+                 
                   <option value="500000">5 lac</option>
                   <option value="1000000">10 lac</option>
                   <option value="2000000">20 lac</option>
@@ -299,7 +300,7 @@ if(isset($_POST['h_search'])){
       <?php
          }
       }else{
-         echo '<p class="empty" style="margin-left:380px; background-color:#00000000;">Search</p>';
+         echo '<p class="empty">no results found!</p>';
       }
       ?>
       

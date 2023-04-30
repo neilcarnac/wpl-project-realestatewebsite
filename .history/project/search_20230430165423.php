@@ -299,7 +299,7 @@ if(isset($_POST['h_search'])){
       <?php
          }
       }else{
-         echo '<p class="empty" style="margin-left:380px; background-color:#00000000;">Search</p>';
+         echo '<p class="empty" style=>Search</p>';
       }
       ?>
       
